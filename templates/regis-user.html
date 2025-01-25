@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran User</title>
+    <link rel="stylesheet" href="/static/style/regis-user.css">
+</head>
+<body>
+    <div class="home">
+        <a href="{{ url_for('home') }}" class="home">Home</a>
+    </div>
+    <div class="container">
+        <!-- Tambahkan flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form class="form" method="post" >
+            <h1>Pendaftaran User</h1>
+            <div class="input-group">
+                <label for="username">Nama</label>
+                <input type="text" id="username" name="username" placeholder="Nama" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <button type="submit">Daftar sebagai User</button>
+        </form>
+    </div>
+    <footer>
+        <link rel="stylesheet" href="/static/style/footer.css">
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

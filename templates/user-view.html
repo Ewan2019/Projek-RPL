@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User View</title>
+    <link rel="stylesheet" href="/static/style/user-view.css">
+</head>
+<body>
+    <h2>Daftar Kereta</h2>
+    <table id="trainTable">
+        <thead>
+            <tr>
+                <th>Nama Kereta</th>
+                <th>Tanggal</th>
+                <th>Jam</th>
+                <th>Hari</th>
+                <th>Prediksi Waktu</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data kereta akan ditambahkan di sini -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', loadTrains);
+
+        function loadTrains() {
+            const trains = JSON.parse(localStorage.getItem('trains')) || [];
+            const table = document.getElementById('trainTable').getElementsByTagName('tbody')[0];
+            trains.forEach(train => {
+                const newRow = table.insertRow();
+
+                const cell1 = newRow.insertCell(0);
+                const cell2 = newRow.insertCell(1);
+                const cell3 = newRow.insertCell(2);
+                const cell4 = newRow.insertCell(3);
+                const cell5 = newRow.insertCell(4);
+                const cell6 = newRow.insertCell(5);
+
+                cell1.innerHTML = train.trainName;
+                cell2.innerHTML = train.date;
+                cell3.innerHTML = train.time;
+                cell4.innerHTML = train.day;
+                cell5.innerHTML = train.prediction;
+                cell6.innerHTML = train.status;
+            });
+        }
+    </script>
+</body>
+</html>

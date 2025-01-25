@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/static/style/admin-view.css">
+</head>
+<body>
+    <div class="home"> 
+        <button onclick="window.location.href='index.html'" class="home">Home</button>
+    </div>
+    <h1>Admin Page</h1>
+    <form id="trainForm">
+        <label for="trainName">Nama Kereta:</label>
+        <input type="text" id="trainName" name="trainName" required><br>
+
+        <label for="date">Tanggal:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="time">Jam:</label>
+        <input type="time" id="time" name="time" required><br>
+
+        <label for="day">Hari:</label>
+        <select id="day" name="day" required>
+            <option value="Senin">Senin</option>
+            <option value="Selasa">Selasa</option>
+            <option value="Rabu">Rabu</option>
+            <option value="Kamis">Kamis</option>
+            <option value="Jumat">Jumat</option>
+            <option value="Sabtu">Sabtu</option>
+            <option value="Minggu">Minggu</option>
+        </select><br>
+
+        <label for="prediction">Prediksi Waktu:</label>
+        <input type="time" id="prediction" name="prediction" required><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="Tepat Waktu">Tepat Waktu</option>
+            <option value="Terlambat">Terlambat</option>
+            <option value="Dibatalkan">Dibatalkan</option>
+        </select><br>
+
+        <button type="button" onclick="addTrain()">Tambah</button>
+    </form>
+
+    <h2>Daftar Kereta</h2>
+    <table id="trainTable">
+        <thead>
+            <tr>
+                <th>Nama Kereta</th>
+                <th>Tanggal</th>
+                <th>Jam</th>
+                <th>Hari</th>
+                <th>Prediksi Waktu</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data kereta akan ditambahkan di sini -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', loadTrains);
+
+        function addTrain() {
+            const trainName = document.getElementById('trainName').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const day = document.getElementById('day').value;
+            const prediction = document.getElementById('prediction').value;
+            const status = document.getElementById('status').value;
+
+            const train = { trainName, date, time, day, prediction, status };
+            let trains = JSON.parse(localStorage.getItem('trains')) || [];
+            trains.push(train);
+            localStorage.setItem('trains', JSON.stringify(trains));
+
+            appendTrainToTable(train);
+            document.getElementById('trainForm').reset();
+        }
+
+        function appendTrainToTable(train) {
+            const table = document.getElementById('trainTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+            const cell6 = newRow.insertCell(5);
+            const cell7 = newRow.insertCell(6);
+
+            cell1.innerHTML = train.trainName;
+            cell2.innerHTML = train.date;
+            cell3.innerHTML = train.time;
+            cell4.innerHTML = train.day;
+            cell5.innerHTML = train.prediction;
+
+            // Mengubah status menjadi dropdown
+            const statusSelect = document.createElement('select');
+            const statusOptions = ['Tepat Waktu', 'Terlambat', 'Dibatalkan'];
+            statusOptions.forEach(optionValue => {
+                const option = document.createElement('option');
+                option.value = optionValue;
+                option.textContent = optionValue;
+                if (optionValue === train.status) {
+                    option.selected = true;
+                }
+                statusSelect.appendChild(option);
+            });
+            cell6.appendChild(statusSelect);
+
+            cell7.innerHTML = '<button onclick="deleteTrain(this)">Hapus</button>';
+
+            // Menambahkan event listener untuk update status jika pilihan berubah
+            statusSelect.addEventListener('change', () => {
+                updateTrain(newRow.rowIndex - 1, 'status', statusSelect.value);
+            });
+
+            // Membuat kolom lain dapat diedit
+            cell1.contentEditable = true;
+            cell2.contentEditable = true;
+            cell3.contentEditable = true;
+            cell4.contentEditable = true;
+            cell5.contentEditable = true;
+
+            // Event listener untuk perubahan nilai kolom selain status
+            cell1.addEventListener('blur', () => updateTrain(newRow.rowIndex - 1, 'trainName', cell1.innerText));
+            cell2.addEventListener('blur', () => updateTrain(newRow.rowIndex - 1, 'date', cell2.innerText));
+            cell3.addEventListener('blur', () => updateTrain(newRow.rowIndex - 1, 'time', cell3.innerText));
+            cell4.addEventListener('blur', () => updateTrain(newRow.rowIndex - 1, 'day', cell4.innerText));
+            cell5.addEventListener('blur', () => updateTrain(newRow.rowIndex - 1, 'prediction', cell5.innerText));
+        }
+
+        function loadTrains() {
+            const trains = JSON.parse(localStorage.getItem('trains')) || [];
+            trains.forEach(train => appendTrainToTable(train));
+        }
+
+        function deleteTrain(button) {
+            const row = button.parentNode.parentNode;
+            const trainName = row.cells[0].innerText;
+            let trains = JSON.parse(localStorage.getItem('trains')) || [];
+            trains = trains.filter(train => train.trainName !== trainName);
+            localStorage.setItem('trains', JSON.stringify(trains));
+            row.parentNode.removeChild(row);
+        }
+
+        function updateTrain(index, key, value) {
+            let trains = JSON.parse(localStorage.getItem('trains')) || [];
+            trains[index][key] = value;
+            localStorage.setItem('trains', JSON.stringify(trains));
+        }
+    </script>
+</body>
+</html>

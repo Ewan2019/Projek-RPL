@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('/static/images/background.png'); /* Wallpaper */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.home {
+    position: absolute;
+    top : 10px;
+    left: 0;
+    padding: 10px 20px; /* Tambahkan padding horizontal */
+}
+
+.login {
+  padding: 10px 20px; /* Tambahkan padding horizontal */
+  font-size: 16px;
+  color: white;
+  background-color: #6a11cb;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none; /* Penting: hilangkan garis bawah link */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login:hover {
+  background-color: #2575fc;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #6a11cb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #2575fc;
+}
+
+.signup-text {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.signup-text a {
+  color: #6a11cb;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  position: fixed; /* agar footer selalu di bawah */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0; /* warna latar belakang footer */
+  padding: 10px;
+  text-align: center;
+}
