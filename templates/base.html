@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}{% endblock %}</title>  <!-- Judul halaman, akan diisi oleh template anak -->
-    <!-- Tautan CSS dan JavaScript di sini -->
-    <link rel="stylesheet" href="/static/style/base.css">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/base.css') }}">
     {% block additional_css %}{% endblock %}
 </head>
 <body>
     <header>
-        <!-- Kode header Anda di sini -->
         <div class="header-left">
             <div class="logo">
-                <img src="/static/images/logo.jpg" alt="Logo" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="logo">
             </div>
             <div class="welcome-text">
                 Selamat datang di website saya
@@ -20,21 +18,29 @@
         <div class="header-right">
             <nav>
                 <ul>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li id="login-link">
+                        {% if 'loggedin' in session %}
+                            <a href="#">{{ session.username }}</a>
+                        {% else %}
+                            <a href="{{ url_for('login') }}">Login</a>
+                        {% endif %}
+                    </li>
+                    {% if 'loggedin' in session %}
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        {% block content %}{% endblock %}  <!-- Bagian konten utama, akan diisi oleh template anak -->
+        {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer (jika ada) -->
     <footer>
-      <link rel="stylesheet" href="/static/style/footer.css">
+      <link rel="stylesheet" href="{{ url_for('static', filename='style/footer.css') }}">
       <p>&copy; 2025 My Website. All rights reserved.</p>
-  </footer>
+    </footer>
 </body>
 </html>

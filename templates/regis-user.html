@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}Registrasi{% endblock %}
+{% block title %}Registrasi User{% endblock %}
 
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/regis-user.css') }}">
     <div class="container">
-        <!-- Tambahkan flash messages -->
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
+                <div class="alert-container">
                 {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">
-                        {{ message }}
-                    </div>
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
                 {% endfor %}
+                </div>
             {% endif %}
         {% endwith %}
         <form class="form" method="post" >
@@ -20,16 +19,68 @@
             <div class="input-group">
                 <label for="username">Nama</label>
                 <input type="text" id="username" name="username" placeholder="Nama" required>
+                <span class="error" id="username-error"></span>
             </div>
             <div class="input-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Email" required>
+                <span class="error" id="email-error"></span>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Password">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <span class="error" id="password-error"></span>
+            </div>
+            <div class="input-group">
+                <label for="confirm_password">Konfirmasi Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Konfirmasi Password" required>
+                <span class="error" id="confirm-password-error"></span>
             </div>
             <button type="submit">Daftar sebagai User</button>
         </form>
     </div>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (event) => {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+
+            let isValid = true;
+
+            if (!username) {
+                document.getElementById('username-error').textContent = 'Nama harus diisi';
+                isValid = false;
+            } else {
+                document.getElementById('username-error').textContent = '';
+            }
+
+            if (!email) {
+                document.getElementById('email-error').textContent = 'Email harus diisi';
+                isValid = false;
+            } else {
+                document.getElementById('email-error').textContent = '';
+            }
+
+            if (!password) {
+                document.getElementById('password-error').textContent = 'Password harus diisi';
+                isValid = false;
+            } else {
+                document.getElementById('password-error').textContent = '';
+            }
+
+            if (password !== confirmPassword) {
+                document.getElementById('confirm-password-error').textContent = 'Password tidak cocok';
+                isValid = false;
+            } else {
+                document.getElementById('confirm-password-error').textContent = '';
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
 {% endblock %}
