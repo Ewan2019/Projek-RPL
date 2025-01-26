@@ -106,6 +106,44 @@ def regis_user():
             cur.close()
     return render_template('regis-user.html')
 
+@app.route('/regis_admin', methods=['GET', 'POST'])
+def regis_admin():
+    if request.method == 'POST':
+        admin_key = request.form.get('admin_key')
+        if admin_key != os.environ.get('ADMIN_REGISTRATION_KEY'):
+            flash('Kunci admin salah!', 'danger')
+            return render_template('regis-admin.html')
+
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        confirm_password = request.form.get('confirm_password')
+
+        if not username or not email or not password or not confirm_password:
+            flash('Semua field harus diisi', 'danger')
+            return render_template('regis-admin.html')
+
+        if password != confirm_password:
+            flash('Password tidak cocok', 'danger')
+            return render_template('regis-admin.html')
+
+        cur = mysql.connection.cursor()
+        try:
+            cur.execute("SELECT * FROM users WHERE username = %s OR email = %s", (username, email))
+            user = cur.fetchone()
+            if user is None:
+                cur.execute("INSERT INTO users (username, email, password, user_type) VALUES (%s, %s, %s, %s)",
+                            (username, email, generate_password_hash(password), 'admin'))
+                mysql.connection.commit()
+                flash('Registrasi Admin Berhasil', 'success')
+            else:
+                flash('Username atau email sudah ada', 'danger')
+        except Exception as e:
+            flash(f'Error database: {str(e)}', 'danger')
+        finally:
+            cur.close()
+    return render_template('regis-admin.html')
+
 @app.route('/user_view', methods=['GET'])
 def user_view():
     if 'loggedin' in session and session['user_type'] == 'user':
