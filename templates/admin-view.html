@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
-    <link rel="stylesheet" href="/static/style/admin-view.css">
-</head>
-<body>
-    <div class="home"> 
-        <button onclick="window.location.href='index.html'" class="home">Home</button>
-    </div>
+{% extends 'base.html' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/admin-view.css') }}">
     <h1>Admin Page</h1>
     <form id="trainForm">
         <label for="trainName">Nama Kereta:</label>
@@ -157,5 +151,4 @@
             localStorage.setItem('trains', JSON.stringify(trains));
         }
     </script>
-</body>
-</html>
+{% endblock %}

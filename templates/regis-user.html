@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran User</title>
-    <link rel="stylesheet" href="/static/style/regis-user.css">
-</head>
-<body>
-    <div class="home">
-        <a href="{{ url_for('home') }}" class="home">Home</a>
-    </div>
+{% extends 'base.html' %}
+
+{% block title %}Registrasi{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/regis-user.css') }}">
     <div class="container">
         <!-- Tambahkan flash messages -->
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -38,9 +32,4 @@
             <button type="submit">Daftar sebagai User</button>
         </form>
     </div>
-    <footer>
-        <link rel="stylesheet" href="/static/style/footer.css">
-        <p>&copy; 2025 My Website. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+{% endblock %}

@@ -10,6 +10,7 @@ body {
 
 h1, h2 {
     margin: 20px 0;
+    margin-top: 80px;
     text-align: center;
     color: #fff;
 }
@@ -54,6 +55,7 @@ table {
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
 }
 
 table th, table td {
@@ -81,24 +83,4 @@ button {
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
-}
-
-.home {
-    padding: 10px;
-    font-size: 16px;
-    color: white;
-    background-color: #6a11cb;
-    border-radius: 5px;
-    border: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-decoration: none;
-  }
-
-.home:hover {
-    background-color: #2575fc;
 }

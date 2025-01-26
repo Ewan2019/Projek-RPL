@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem pelacakan dan prediksi kereta</title>
-    <link rel="stylesheet" href="/static/style/home.css">
-</head>
-<body>
-    <header>
-        <div class="header-left">
-        <div class="logo">
-            <img src="/static/images/logo.jpg" alt="Logo" class="logo">
-        </div>
-            <div class="welcome-text">
-                Welcome to my website
-            </div>
-        </div>
-        <div class="header-right">
-            <nav>
-                <ul>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+{% extends 'base.html' %}
+
+{% block title %}Halaman Utama{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/home.css') }}">
     <div class="container">
         <h2>About Us</h2>
         <p>Selamat Datang di Website sistem pelacakan dan prediksi waktu kereta api</p>
     </div>
-    <footer>
-        <link rel="stylesheet" href="/static/style/footer.css">
-        <p>&copy; 2025 My Website. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+{% endblock %}

@@ -25,11 +25,6 @@ def indeks():
 def home():
     return render_template('home.html')
 
-@app.route('/choice_regis')
-def choice_regis():
-    return render_template('choice-regis.html')
-
-
 # Registrasi pengguna
 @app.route('/regis_user', methods=('GET', 'POST'))
 def regis_user():

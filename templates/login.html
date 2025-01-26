@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="/static/style/login.css">
-    <link rel="stylesheet" href="/static/style/footer.css">
-</head>
-<body>
-    <div class="home"> 
-        <a href="{{ url_for('home') }}" class="login">Home</a>
-    </div>
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/login.css') }}">
     <div class="login-container">
         <!-- Tambahkan flash messages -->
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -33,12 +26,7 @@
         <input type="password" class="form-control" id="password" name="password" required>
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
-</form>
-            <p class="signup-text">Belum punya akun? <a href="{{ url_for('choice_regis') }}">Daftar di sini</a></p>
+        <p class="signup-text">Belum punya akun? <a href="{{ url_for('regis_user') }}">Daftar di sini</a></p>
         </form>
     </div>
-    <footer>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+{% endblock %}

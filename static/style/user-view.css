@@ -4,32 +4,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; /* Mengatur agar elemen tersusun vertikal */
-}
-
-.header { /* Menambahkan header untuk tombol Home */
-    background-color: #f0f0f0; /* Warna latar belakang header */
-    padding: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start; /* Menempatkan tombol Home di kiri */
-}
-
-.home {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #6a11cb;
-    border-radius: 5px;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-right: 20px; /* Menambahkan jarak antara tombol dan konten */
-}
-
-.home:hover {
-    background-color: #0056b3;
+    flex-direction: column;
 }
 
 .container {
@@ -38,29 +13,31 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px; /* Menambahkan margin untuk jarak dari tepi */
-    flex: 1; /* Mengisi sisa ruang vertikal */
-    overflow-y: auto; /* Agar isi table bisa scroll jika terlalu panjang */
+    margin: 20px;
+    flex: 1;
+    overflow-y: auto;
 }
 
-h2 {
+h1 {
     text-align: center;
     padding: 12px;
-    border: 1px solid #000000;
-    background-color: #28a745;
+    background-color:  #28a745;
+    color: white;
+    margin-top: 80px;
+    margin-bottom: 0; /* Removes default margin below h2 */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 0 auto;
-    table-layout: fixed; /* Agar kolom memiliki lebar yang sama */
+    table-layout: fixed;
 }
 
 table th, table td {
     padding: 12px;
     border: 1px solid #000000;
-    overflow: hidden; /* Agar teks tidak keluar dari kolom */
+    overflow: hidden;
 }
 
 table th {
