@@ -5,6 +5,18 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/user-view.css') }}">
     <h1>Daftar Kereta</h1>
+
+    <!-- Menampilkan pesan flash jika ada -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
     <table id="trainTable">
         <thead>
             <tr>
@@ -17,33 +29,22 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Data kereta akan ditambahkan di sini -->
+            {% if trains %}
+                {% for train in trains %}
+                <tr>
+                    <td>{{ train[1] }}</td>  <!-- Nama Kereta -->
+                    <td>{{ train[2] }}</td>  <!-- Tanggal -->
+                    <td>{{ train[3] }}</td>  <!-- Jam -->
+                    <td>{{ train[4] }}</td>  <!-- Hari -->
+                    <td>{{ train[5] }}</td>  <!-- Prediksi Waktu -->
+                    <td>{{ train[6] }}</td>  <!-- Status -->
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="6">Tidak ada data kereta yang ditemukan</td>
+                </tr>
+            {% endif %}
         </tbody>
     </table>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', loadTrains);
-
-        function loadTrains() {
-            const trains = JSON.parse(localStorage.getItem('trains')) || [];
-            const table = document.getElementById('trainTable').getElementsByTagName('tbody')[0];
-            trains.forEach(train => {
-                const newRow = table.insertRow();
-
-                const cell1 = newRow.insertCell(0);
-                const cell2 = newRow.insertCell(1);
-                const cell3 = newRow.insertCell(2);
-                const cell4 = newRow.insertCell(3);
-                const cell5 = newRow.insertCell(4);
-                const cell6 = newRow.insertCell(5);
-
-                cell1.innerHTML = train.trainName;
-                cell2.innerHTML = train.date;
-                cell3.innerHTML = train.time;
-                cell4.innerHTML = train.day;
-                cell5.innerHTML = train.prediction;
-                cell6.innerHTML = train.status;
-            });
-        }
-    </script>
 {% endblock %}
