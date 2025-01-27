@@ -192,6 +192,9 @@ def admin_view():
         # Jika tidak ada sesi atau tipe user bukan admin, arahkan ke login
         return redirect(url_for('login'))
 
+@app.route('/admin_dashbord', methods=['GET'])
+def admin_dashbord():
+    return render_template('admin-dashbord.html')
 
 @app.route('/api/trains', methods=['GET'])
 def get_trains():
@@ -273,19 +276,20 @@ def add_train():
     finally:
         cur.close()
 
-@app.route('/api/trains/<int:train_id>', methods=['DELETE'])
+@app.route('/delete_train/<int:train_id>', methods=['POST'])
 def delete_train(train_id):
+    print(f"Deleting train with ID {train_id}")  # Cek apakah route ini dipanggil
     cur = mysql.connection.cursor()
     try:
         # Mengeksekusi query untuk menghapus kereta berdasarkan ID
         cur.execute("DELETE FROM jadwal WHERE id = %s", (train_id,))
         mysql.connection.commit()
 
-        # Mengirimkan response sukses jika penghapusan berhasil
-        return jsonify({'message': 'Kereta berhasil dihapus'}), 200
+        flash('Jadwal berhasil dihapus', 'success')
+        return redirect(url_for('user_view'))
     except Exception as e:
-        # Menangani error dan mengirimkan pesan error
-        return jsonify({'error': f'Error: {str(e)}'}), 500
+        flash(f"Error: {str(e)}", "danger")
+        return redirect(url_for('user_view'))
     finally:
         cur.close()
 

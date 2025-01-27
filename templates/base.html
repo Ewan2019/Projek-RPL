@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/base.css') }}">
     {% block additional_css %}{% endblock %}
@@ -11,14 +13,23 @@
             <div class="logo">
                 <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="logo">
             </div>
-            <div class="welcome-text">
-                Selamat datang di website saya
-            </div>
+            {% if 'loggedin' in session %}
+                <div class="welcome-text">
+                    Selamat datang, {{ session.username }}
+                </div>
+            {% else %}
+                <div class="welcome-text">
+                    Selamat datang di website saya
+                </div>
+            {% endif %}
         </div>
         <div class="header-right">
             <nav>
                 <ul>
                     <li><a href="{{ url_for('index') }}">Home</a></li>
+                    {% if 'loggedin' in session and session['user_type'] == 'admin' %}
+                        <li><a href="{{ url_for('admin_dashbord') }}">Admin Dashboard</a></li>
+                    {% endif %}
                     <li id="login-link">
                         {% if 'loggedin' in session %}
                             <a href="#">{{ session.username }}</a>
@@ -39,8 +50,7 @@
     </main>
 
     <footer>
-      <link rel="stylesheet" href="{{ url_for('static', filename='style/footer.css') }}">
-      <p>&copy; 2025 My Website. All rights reserved.</p>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
     </footer>
 </body>
 </html>

@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/admin-view.css') }}">
+
+    <h1>Admin Page</h1>
+
+    <!-- Form untuk menambahkan jadwal kereta -->
+    <form id="trainForm">
+        <label for="trainName">Nama Kereta:</label>
+        <input type="text" id="trainName" name="trainName" required><br>
+
+        <label for="date">Tanggal:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="time">Jam:</label>
+        <input type="time" id="time" name="time" required><br>
+
+        <label for="day">Hari:</label>
+        <select id="day" name="day" required>
+            <option value="Senin">Senin</option>
+            <option value="Selasa">Selasa</option>
+            <option value="Rabu">Rabu</option>
+            <option value="Kamis">Kamis</option>
+            <option value="Jumat">Jumat</option>
+            <option value="Sabtu">Sabtu</option>
+            <option value="Minggu">Minggu</option>
+        </select><br>
+
+        <label for="prediction">Prediksi Waktu:</label>
+        <input type="time" id="prediction" name="prediction" required><br>
+
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="Tepat Waktu">Tepat Waktu</option>
+            <option value="Terlambat">Terlambat</option>
+            <option value="Dibatalkan">Dibatalkan</option>
+        </select><br>
+
+        <label for="kecepatan">kecepatan:</label>
+        <input type="number" id="kecepatan" name="kecepatan" required><br>
+        
+        <label for="jarak">Jarak:</label>
+        <input type="number" id="jarak" name="jarak" required><br>
+
+        <button type="button" onclick="addTrain()">Tambah Kereta</button>
+    </form>
+
+    <script>
+
+        // Fungsi untuk menambahkan jadwal kereta
+        function addTrain() {
+            const trainName = document.getElementById('trainName').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const day = document.getElementById('day').value;
+            const prediction = document.getElementById('prediction').value;
+            const status = document.getElementById('status').value;
+            const kecepatan = document.getElementById('kecepatan').value;
+            const jarak= document.getElementById('jarak').value;
+
+            const train = { 
+                nama_kereta: trainName, 
+                tanggal: date, 
+                waktu: time, 
+                hari: day, 
+                prediksi_waktu: prediction, 
+                status: status, 
+                kecepatan: kecepatan, 
+                jarak: jarak 
+            };
+
+            fetch('/api/trains', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(train)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    appendTrainToTable(train);
+                    document.getElementById('trainForm').reset();
+                } else {
+                    alert(data.error);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Fungsi untuk menampilkan data kereta ke dalam tabel
+        function appendTrainToTable(train) {
+            const table = document.getElementById('trainTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+            const cell6 = newRow.insertCell(5);
+            const cell7 = newRow.insertCell(6);
+            const cell8 = newRow.insertCell(7);
+            const cell9 = newRow.insertCell(8);
+
+            cell1.innerHTML = train.nama_kereta;
+            cell2.innerHTML = train.tanggal;
+            cell3.innerHTML = train.waktu;
+            cell4.innerHTML = train.hari;
+            cell5.innerHTML = train.prediksi_waktu;
+
+            const statusSelect = document.createElement('select');
+            const statusOptions = ['Tepat Waktu', 'Terlambat', 'Dibatalkan'];
+            statusOptions.forEach(optionValue => {
+                const option = document.createElement('option');
+                option.value = optionValue;
+                option.textContent = optionValue;
+                if (optionValue === train.status) {
+                    option.selected = true;
+                }
+                statusSelect.appendChild(option);
+            });
+            cell6.appendChild(statusSelect);
+
+            cell7.innerHTML = train.kecepatan;
+            cell8.innerHTML = train.jarak;
+
+            // Tombol hapus
+            cell9.innerHTML = '<button onclick="deleteTrain(this)">Hapus</button>';
+        }
+
+        // Fungsi untuk menghapus kereta
+        function deleteTrain(button) {
+            const row = button.parentNode.parentNode;
+            const trainName = row.cells[0].innerText;
+
+            fetch('/api/trains/' + trainName, {
+            method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+            if (data.message) {
+                row.parentNode.removeChild(row);
+            } else {
+                alert(data.error);
+            }
+            })
+            .catch(error => console.error('Error deleting train:', error));
+        }
+        function deleteTrain(button) {
+            const row = button.parentNode.parentNode;
+            const trainName = row.cells[0].innerText;
+
+            fetch('/api/trains/' + trainName, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    row.parentNode.removeChild(row);
+                } else {
+                    alert(data.error);
+                }
+            })
+            .catch(error => console.error('Error deleting train:', error));
+        }
+    </script>
+{% endblock %}
