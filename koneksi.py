@@ -197,27 +197,36 @@ def admin_view():
 def get_trains():
     cur = mysql.connection.cursor()
     try:
-        cur.execute("SELECT * FROM jadwal")
+        cur.execute("SELECT * FROM jadwal")  # Mengambil data jadwal kereta dari tabel 'jadwal'
         trains = cur.fetchall()
 
+        # Jika tidak ada data kereta dalam database
         if not trains:
             return jsonify({'error': 'Tidak ada kereta dalam database'}), 404
 
+        # Menyiapkan data kereta dalam format JSON untuk dikirim ke frontend
         train_data = []
         for train in trains:
             train_data.append({
+                'id': train[0],  # Pastikan untuk mengirimkan ID kereta untuk keperluan penghapusan
                 'nama_kereta': train[1],
-                'tanggal': train[2],
-                'waktu': train[3],
+                'tanggal': train[2].strftime('%Y-%m-%d'),  # Mengubah format tanggal menjadi 'YYYY-MM-DD'
+                'waktu': train[3].strftime('%H:%M:%S'),  # Mengubah format waktu menjadi 'HH:MM:SS'
                 'hari': train[4],
-                'prediksi_waktu': train[5],
-                'status': train[6]
+                'prediksi_waktu': train[5].strftime('%H:%M:%S'),  # Format waktu prediksi
+                'status': train[6],
+                'kecepatan': train[7],
+                'jarak': train[8]
             })
+        
+        # Mengirimkan data kereta dalam format JSON ke frontend
         return jsonify({'trains': train_data}), 200
     except Exception as e:
+        # Menangani error dan mengirimkan pesan error
         return jsonify({'error': f'Error: {str(e)}'}), 500
     finally:
         cur.close()
+
 
 @app.route('/api/trains', methods=['POST'])
 def add_train():
@@ -228,9 +237,11 @@ def add_train():
     hari = data.get('hari')
     prediksi_waktu_str = data.get('prediksi_waktu')  # Format yang dikirimkan: HH:MM (tanpa detik)
     status = data.get('status')
+    kecepatan = data.get('kecepatan')
+    jarak = data.get('jarak')
 
     # Cek apakah semua field sudah diisi
-    if not all([nama_kereta, tanggal_str, waktu_str, hari, prediksi_waktu_str, status]):
+    if not all([nama_kereta, tanggal_str, waktu_str, hari, prediksi_waktu_str, status, kecepatan, jarak]):
         return jsonify({'error': 'Semua field harus diisi'}), 400
 
     try:
@@ -252,8 +263,8 @@ def add_train():
 
     cur = mysql.connection.cursor()
     try:
-        cur.execute("INSERT INTO jadwal (nama_kereta, tanggal, waktu, hari, prediksi_waktu, status) VALUES (%s, %s, %s, %s, %s, %s)",
-                    (nama_kereta, tanggal, waktu, hari, prediksi_waktu, status))
+        cur.execute("INSERT INTO jadwal (nama_kereta, tanggal, waktu, hari, prediksi_waktu, status, kecepatan, jarak) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+                    (nama_kereta, tanggal, waktu, hari, prediksi_waktu, status, kecepatan, jarak))
         mysql.connection.commit()
         train_id = cur.lastrowid
         return jsonify({'message': 'Kereta berhasil ditambahkan', 'id': train_id}), 201
@@ -266,13 +277,18 @@ def add_train():
 def delete_train(train_id):
     cur = mysql.connection.cursor()
     try:
+        # Mengeksekusi query untuk menghapus kereta berdasarkan ID
         cur.execute("DELETE FROM jadwal WHERE id = %s", (train_id,))
         mysql.connection.commit()
+
+        # Mengirimkan response sukses jika penghapusan berhasil
         return jsonify({'message': 'Kereta berhasil dihapus'}), 200
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        # Menangani error dan mengirimkan pesan error
+        return jsonify({'error': f'Error: {str(e)}'}), 500
     finally:
         cur.close()
+
 
 @app.route('/api/trains/<int:train_id>', methods=['PUT'])
 def update_train(train_id):

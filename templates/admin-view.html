@@ -32,12 +32,19 @@
         <label for="prediction">Prediksi Waktu:</label>
         <input type="time" id="prediction" name="prediction" required><br>
 
+
         <label for="status">Status:</label>
         <select id="status" name="status" required>
             <option value="Tepat Waktu">Tepat Waktu</option>
             <option value="Terlambat">Terlambat</option>
             <option value="Dibatalkan">Dibatalkan</option>
         </select><br>
+
+        <label for="kecepatan">kecepatan:</label>
+        <input type="number" id="kecepatan" name="kecepatan" required><br>
+        
+        <label for="jarak">Jarak:</label>
+        <input type="number" id="jarak" name="jarak" required><br>
 
         <button type="button" onclick="addTrain()">Tambah Kereta</button>
     </form>
@@ -52,6 +59,8 @@
                 <th>Hari</th>
                 <th>Prediksi Waktu</th>
                 <th>Status</th>
+                <th>kecepatan</th>
+                <th>jarak</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -68,8 +77,8 @@
             fetch('/api/trains')
             .then(response => response.json())
             .then(data => {
-                if (data.trains && data.trains.length > 0) {
-                    data.trains.forEach(train => {
+                if (data.length > 0) {
+                    data.forEach(train => {
                         appendTrainToTable(train);
                     });
                 } else {
@@ -87,6 +96,8 @@
             const day = document.getElementById('day').value;
             const prediction = document.getElementById('prediction').value;
             const status = document.getElementById('status').value;
+            const kecepatan = document.getElementById('kecepatan').value;
+            const jarak= document.getElementById('jarak').value;
 
             const train = { 
                 nama_kereta: trainName, 
@@ -94,7 +105,9 @@
                 waktu: time, 
                 hari: day, 
                 prediksi_waktu: prediction, 
-                status: status 
+                status: status, 
+                kecepatan: kecepatan, 
+                jarak: jarak 
             };
 
             fetch('/api/trains', {
@@ -128,6 +141,8 @@
             const cell5 = newRow.insertCell(4);
             const cell6 = newRow.insertCell(5);
             const cell7 = newRow.insertCell(6);
+            const cell8 = newRow.insertCell(7);
+            const cell9 = newRow.insertCell(8);
 
             cell1.innerHTML = train.nama_kereta;
             cell2.innerHTML = train.tanggal;
@@ -148,11 +163,31 @@
             });
             cell6.appendChild(statusSelect);
 
+            cell7.innerHTML = train.kecepatan;
+            cell8.innerHTML = train.jarak;
+
             // Tombol hapus
-            cell7.innerHTML = '<button onclick="deleteTrain(this)">Hapus</button>';
+            cell9.innerHTML = '<button onclick="deleteTrain(this)">Hapus</button>';
         }
 
         // Fungsi untuk menghapus kereta
+        function deleteTrain(button) {
+            const row = button.parentNode.parentNode;
+            const trainName = row.cells[0].innerText;
+
+            fetch('/api/trains/' + trainName, {
+            method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+            if (data.message) {
+                row.parentNode.removeChild(row);
+            } else {
+                alert(data.error);
+            }
+            })
+            .catch(error => console.error('Error deleting train:', error));
+        }
         function deleteTrain(button) {
             const row = button.parentNode.parentNode;
             const trainName = row.cells[0].innerText;

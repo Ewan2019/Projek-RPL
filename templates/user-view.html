@@ -5,18 +5,7 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/user-view.css') }}">
     <h1>Daftar Kereta</h1>
-
-    <!-- Menampilkan pesan flash jika ada -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <ul>
-                {% for category, message in messages %}
-                    <li class="{{ category }}">{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
-
+    
     <table id="trainTable">
         <thead>
             <tr>
