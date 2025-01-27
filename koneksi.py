@@ -223,19 +223,30 @@ def get_trains():
 def add_train():
     data = request.get_json()
     nama_kereta = data.get('nama_kereta')
-    tanggal_str = data.get('tanggal')
-    waktu_str = data.get('waktu')
+    tanggal_str = data.get('tanggal')  # Format yang dikirimkan: YYYY-MM-DD
+    waktu_str = data.get('waktu')      # Format yang dikirimkan: HH:MM (tanpa detik)
     hari = data.get('hari')
-    prediksi_waktu_str = data.get('prediksi_waktu')
+    prediksi_waktu_str = data.get('prediksi_waktu')  # Format yang dikirimkan: HH:MM (tanpa detik)
     status = data.get('status')
 
+    # Cek apakah semua field sudah diisi
     if not all([nama_kereta, tanggal_str, waktu_str, hari, prediksi_waktu_str, status]):
         return jsonify({'error': 'Semua field harus diisi'}), 400
 
     try:
+        # Parsing Tanggal
         tanggal = datetime.datetime.strptime(tanggal_str, '%Y-%m-%d').date()
+
+        # Parsing Waktu
+        if len(waktu_str) == 5:  # Jika format waktu adalah HH:MM (tanpa detik)
+            waktu_str = waktu_str + ":00"  # Tambahkan detik menjadi HH:MM:00
         waktu = datetime.datetime.strptime(waktu_str, '%H:%M:%S').time()
+
+        # Parsing Prediksi Waktu
+        if len(prediksi_waktu_str) == 5:  # Jika format waktu adalah HH:MM (tanpa detik)
+            prediksi_waktu_str = prediksi_waktu_str + ":00"  # Tambahkan detik menjadi HH:MM:00
         prediksi_waktu = datetime.datetime.strptime(prediksi_waktu_str, '%H:%M:%S').time()
+
     except ValueError:
         return jsonify({'error': 'Format tanggal atau waktu salah'}), 400
 
