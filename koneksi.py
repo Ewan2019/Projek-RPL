@@ -5,6 +5,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
 import datetime
 from flask_cors import CORS
+import logging
+
+# Configure logging to write to a file
+log_file = os.path.join(os.getcwd(), 'app.log')
+logging.basicConfig(filename=log_file, level=logging.ERROR,
+                    format='%(asctime)s - %(levelname)s - %(filename)s - %(lineno)d - %(message)s')
 
 # Memuat variabel lingkungan dari file .env
 load_dotenv()
@@ -278,20 +284,25 @@ def add_train():
 
 @app.route('/delete_train/<int:train_id>', methods=['POST'])
 def delete_train(train_id):
-    print(f"Deleting train with ID {train_id}")  # Cek apakah route ini dipanggil
+    print(f"Attempting to delete train with ID: {train_id}")
     cur = mysql.connection.cursor()
     try:
-        # Mengeksekusi query untuk menghapus kereta berdasarkan ID
         cur.execute("DELETE FROM jadwal WHERE id = %s", (train_id,))
+        affected_rows = cur.rowcount
         mysql.connection.commit()
 
-        flash('Jadwal berhasil dihapus', 'success')
-        return redirect(url_for('user_view'))
+        if affected_rows > 0:
+            flash('Jadwal berhasil dihapus', 'success')
+        else:
+            flash('Jadwal dengan ID tersebut tidak ditemukan.', 'warning')
+        return redirect(url_for('admin_view'))
     except Exception as e:
-        flash(f"Error: {str(e)}", "danger")
-        return redirect(url_for('user_view'))
+        logging.exception(f"Error deleting train with ID {train_id}: {e}")
+        flash(f"Terjadi kesalahan saat menghapus jadwal. Silakan coba lagi. Check the application log for details.", "danger")
+        return redirect(url_for('admin_view'))
     finally:
         cur.close()
+
 
 
 @app.route('/api/trains/<int:train_id>', methods=['PUT'])

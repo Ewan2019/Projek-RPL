@@ -28,7 +28,7 @@
                 <ul>
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     {% if 'loggedin' in session and session['user_type'] == 'admin' %}
-                        <li><a href="{{ url_for('admin_dashbord') }}">Admin Dashboard</a></li>
+                        <li><a href="{{ url_for('admin_dashbord') }}">Tambah Jadwal</a></li>
                     {% endif %}
                     <li id="login-link">
                         {% if 'loggedin' in session %}
