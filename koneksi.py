@@ -241,44 +241,48 @@ def get_trains():
 def add_train():
     data = request.get_json()
     nama_kereta = data.get('nama_kereta')
-    tanggal_str = data.get('tanggal')  # Format yang dikirimkan: YYYY-MM-DD
-    waktu_str = data.get('waktu')      # Format yang dikirimkan: HH:MM (tanpa detik)
+    tanggal_str = data.get('tanggal')
+    waktu_str = data.get('waktu')
     hari = data.get('hari')
-    prediksi_waktu_str = data.get('prediksi_waktu')  # Format yang dikirimkan: HH:MM (tanpa detik)
+    prediksi_waktu_str = data.get('prediksi_waktu')
     status = data.get('status')
     kecepatan = data.get('kecepatan')
     jarak = data.get('jarak')
 
-    # Cek apakah semua field sudah diisi
-    if not all([nama_kereta, tanggal_str, waktu_str, hari, prediksi_waktu_str, status, kecepatan, jarak]):
-        return jsonify({'error': 'Semua field harus diisi'}), 400
+    # Input validation: Check for missing fields
+    required_fields = ['nama_kereta', 'tanggal', 'waktu', 'hari', 'prediksi_waktu', 'status', 'kecepatan', 'jarak']
+    missing_fields = [field for field in required_fields if data.get(field) is None]
+    if missing_fields:
+        return jsonify({'error': f'Missing fields: {", ".join(missing_fields)}'}), 400
 
     try:
-        # Parsing Tanggal
         tanggal = datetime.datetime.strptime(tanggal_str, '%Y-%m-%d').date()
-
-        # Parsing Waktu
-        if len(waktu_str) == 5:  # Jika format waktu adalah HH:MM (tanpa detik)
-            waktu_str = waktu_str + ":00"  # Tambahkan detik menjadi HH:MM:00
+        waktu_str = waktu_str + ":00" if len(waktu_str) == 5 else waktu_str
         waktu = datetime.datetime.strptime(waktu_str, '%H:%M:%S').time()
-
-        # Parsing Prediksi Waktu
-        if len(prediksi_waktu_str) == 5:  # Jika format waktu adalah HH:MM (tanpa detik)
-            prediksi_waktu_str = prediksi_waktu_str + ":00"  # Tambahkan detik menjadi HH:MM:00
+        prediksi_waktu_str = prediksi_waktu_str + ":00" if len(prediksi_waktu_str) == 5 else prediksi_waktu_str
         prediksi_waktu = datetime.datetime.strptime(prediksi_waktu_str, '%H:%M:%S').time()
 
-    except ValueError:
-        return jsonify({'error': 'Format tanggal atau waktu salah'}), 400
+    except ValueError as e:
+        return jsonify({'error': f'Invalid date/time format: {e}'}), 400
 
     cur = mysql.connection.cursor()
     try:
+        # Check for existing train schedule
+        cur.execute("SELECT 1 FROM jadwal WHERE nama_kereta = %s AND tanggal = %s AND waktu = %s", (nama_kereta, tanggal, waktu))
+        existing_entry = cur.fetchone()
+
+        if existing_entry:
+            return jsonify({'error': 'Train schedule already exists'}), 409  # Conflict status code
+
+        # Insert new train schedule
         cur.execute("INSERT INTO jadwal (nama_kereta, tanggal, waktu, hari, prediksi_waktu, status, kecepatan, jarak) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
                     (nama_kereta, tanggal, waktu, hari, prediksi_waktu, status, kecepatan, jarak))
         mysql.connection.commit()
         train_id = cur.lastrowid
-        return jsonify({'message': 'Kereta berhasil ditambahkan', 'id': train_id}), 201
+        return jsonify({'message': 'Train added successfully', 'id': train_id}), 201
+
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': f'Database error: {e}'}), 500
     finally:
         cur.close()
 

@@ -99,3 +99,276 @@
 2025-01-28 11:34:01,864 - INFO - _internal.py - 97 - 127.0.0.1 - - [28/Jan/2025 11:34:01] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
 2025-01-28 11:34:01,866 - INFO - _internal.py - 97 - 127.0.0.1 - - [28/Jan/2025 11:34:01] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
 2025-01-28 11:34:01,868 - INFO - _internal.py - 97 - 127.0.0.1 - - [28/Jan/2025 11:34:01] "[36mGET /static/style/admin-view.css HTTP/1.1[0m" 304 -
+2025-01-29 09:57:26,125 - INFO - _internal.py - 97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-29 09:57:26,125 - INFO - _internal.py - 97 - [33mPress CTRL+C to quit[0m
+2025-01-29 09:57:26,162 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 09:57:26,575 - WARNING - _internal.py - 97 -  * Debugger is active!
+2025-01-29 09:57:26,577 - INFO - _internal.py - 97 -  * Debugger PIN: 952-147-792
+2025-01-29 09:57:41,198 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:41] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-29 09:57:41,395 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:41] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 09:57:41,565 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:41] "GET /static/style/user-view.css HTTP/1.1" 200 -
+2025-01-29 09:57:41,566 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:41] "GET /static/images/logo.jpg HTTP/1.1" 200 -
+2025-01-29 09:57:41,568 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:41] "GET /static/style/base.css HTTP/1.1" 200 -
+2025-01-29 09:57:41,593 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:41] "GET /static/images/background.png HTTP/1.1" 200 -
+2025-01-29 09:57:45,957 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:45] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-29 09:57:45,973 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:45] "GET / HTTP/1.1" 200 -
+2025-01-29 09:57:45,984 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:45] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 09:57:45,988 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:45] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 09:57:46,001 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:46] "GET /static/style/home.css HTTP/1.1" 200 -
+2025-01-29 09:57:46,019 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:46] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 09:57:47,555 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:47] "GET /login HTTP/1.1" 200 -
+2025-01-29 09:57:47,568 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:47] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 09:57:47,571 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:47] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 09:57:47,577 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:47] "GET /static/style/login.css HTTP/1.1" 200 -
+2025-01-29 09:57:47,583 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:47] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 09:57:53,228 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:53] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-29 09:57:53,235 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:53] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-29 09:57:53,245 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:53] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 09:57:53,262 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:53] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 09:57:53,264 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:53] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 09:57:53,265 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:53] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 09:57:56,561 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:56] "GET /admin_dashbord HTTP/1.1" 200 -
+2025-01-29 09:57:56,572 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:56] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 09:57:56,575 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:56] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 09:57:56,579 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:56] "GET /static/style/admin-view.css HTTP/1.1" 200 -
+2025-01-29 09:57:56,586 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 09:57:56] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 10:01:32,631 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:01:32] "[35m[1mPOST /api/trains HTTP/1.1[0m" 201 -
+2025-01-29 10:01:35,138 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:01:35] "[35m[1mPOST /api/trains HTTP/1.1[0m" 201 -
+2025-01-29 10:04:57,897 - INFO - _internal.py - 97 -  * Detected change in 'c:\\xampp\\htdocs\\Projek-RPL\\koneksi.py', reloading
+2025-01-29 10:04:57,976 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 10:04:58,420 - WARNING - _internal.py - 97 -  * Debugger is active!
+2025-01-29 10:04:58,423 - INFO - _internal.py - 97 -  * Debugger PIN: 952-147-792
+2025-01-29 10:05:06,679 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:06] "[31m[1mPOST /api/trains HTTP/1.1[0m" 409 -
+2025-01-29 10:05:16,209 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:16] "[31m[1mPOST /api/trains HTTP/1.1[0m" 409 -
+2025-01-29 10:05:22,392 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:22] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-29 10:05:22,429 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:22] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 10:05:22,655 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:22] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 10:05:22,657 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:22] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 10:05:22,659 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:22] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 10:05:22,669 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:22] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 10:05:27,959 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:27] "[32mPOST /delete_train/3 HTTP/1.1[0m" 302 -
+2025-01-29 10:05:27,970 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:27] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 10:05:27,982 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:27] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 10:05:27,983 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:27] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 10:05:27,984 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:05:27] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 10:12:10,668 - INFO - _internal.py - 97 -  * Detected change in 'c:\\xampp\\htdocs\\Projek-RPL\\koneksi.py', reloading
+2025-01-29 10:12:10,729 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 10:53:22,480 - INFO - _internal.py - 97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-29 10:53:22,480 - INFO - _internal.py - 97 - [33mPress CTRL+C to quit[0m
+2025-01-29 10:53:22,481 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 10:53:22,875 - WARNING - _internal.py - 97 -  * Debugger is active!
+2025-01-29 10:53:22,878 - INFO - _internal.py - 97 -  * Debugger PIN: 952-147-792
+2025-01-29 10:53:29,409 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:29] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-29 10:53:29,461 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:29] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 10:53:29,598 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:29] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 10:53:29,601 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:29] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 10:53:29,602 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:29] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 10:53:29,608 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:29] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 10:53:34,069 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:34] "GET /admin_dashbord HTTP/1.1" 200 -
+2025-01-29 10:53:34,082 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:34] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 10:53:34,088 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:34] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 10:53:34,088 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:34] "[36mGET /static/style/admin-view.css HTTP/1.1[0m" 304 -
+2025-01-29 10:53:34,102 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:53:34] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 10:54:13,546 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:54:13] "[35m[1mPOST /api/trains HTTP/1.1[0m" 201 -
+2025-01-29 10:54:14,763 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 10:54:14] "[31m[1mPOST /api/trains HTTP/1.1[0m" 409 -
+2025-01-29 11:04:49,268 - INFO - _internal.py - 97 -  * Detected change in 'c:\\xampp\\htdocs\\Projek-RPL\\koneksi.py', reloading
+2025-01-29 11:04:49,319 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 11:04:49,727 - WARNING - _internal.py - 97 -  * Debugger is active!
+2025-01-29 11:04:49,731 - INFO - _internal.py - 97 -  * Debugger PIN: 952-147-792
+2025-01-29 11:05:11,124 - INFO - _internal.py - 97 -  * Detected change in 'c:\\xampp\\htdocs\\Projek-RPL\\koneksi.py', reloading
+2025-01-29 11:05:11,185 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 11:14:20,882 - INFO - _internal.py - 97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-29 11:14:20,882 - INFO - _internal.py - 97 - [33mPress CTRL+C to quit[0m
+2025-01-29 11:14:20,884 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 11:14:21,311 - WARNING - _internal.py - 97 -  * Debugger is active!
+2025-01-29 11:14:21,315 - INFO - _internal.py - 97 -  * Debugger PIN: 952-147-792
+2025-01-29 11:14:27,455 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:27] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-29 11:14:27,507 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:27] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 11:14:27,623 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:27] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 11:14:27,627 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:27] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 11:14:27,628 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:27] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 11:14:27,655 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:27] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 11:14:34,269 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:34] "GET /admin_dashbord HTTP/1.1" 200 -
+2025-01-29 11:14:34,278 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:34] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 11:14:34,280 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:34] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 11:14:34,282 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:34] "[36mGET /static/style/admin-view.css HTTP/1.1[0m" 304 -
+2025-01-29 11:14:34,294 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:14:34] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 11:15:54,580 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:15:54] "GET /admin_dashbord HTTP/1.1" 200 -
+2025-01-29 11:15:54,591 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:15:54] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 11:15:54,593 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:15:54] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 11:15:54,594 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:15:54] "[36mGET /static/style/admin-view.css HTTP/1.1[0m" 304 -
+2025-01-29 11:15:54,605 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:15:54] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 11:16:43,021 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:16:43] "GET /admin_dashbord HTTP/1.1" 200 -
+2025-01-29 11:16:43,031 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:16:43] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 11:16:43,032 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:16:43] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 11:16:43,034 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:16:43] "[36mGET /static/style/admin-view.css HTTP/1.1[0m" 304 -
+2025-01-29 11:16:43,043 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:16:43] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 11:16:43,049 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:16:43] "GET /api/routes HTTP/1.1" 200 -
+2025-01-29 11:17:39,899 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:17:39] "[35m[1mPOST /api/trains HTTP/1.1[0m" 201 -
+2025-01-29 11:18:33,707 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:18:33] "[35m[1mPOST /api/trains HTTP/1.1[0m" 201 -
+2025-01-29 11:28:52,404 - INFO - _internal.py - 97 -  * Detected change in 'c:\\xampp\\htdocs\\Projek-RPL\\koneksi.py', reloading
+2025-01-29 11:28:52,471 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 11:36:18,483 - INFO - _internal.py - 97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-29 11:36:18,483 - INFO - _internal.py - 97 - [33mPress CTRL+C to quit[0m
+2025-01-29 11:36:18,485 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 11:36:18,849 - WARNING - _internal.py - 97 -  * Debugger is active!
+2025-01-29 11:36:18,851 - INFO - _internal.py - 97 -  * Debugger PIN: 952-147-792
+2025-01-29 11:36:20,037 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:36:20] "[33mGET /admin_dashbord HTTP/1.1[0m" 404 -
+2025-01-29 11:36:24,576 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:36:24] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-29 11:36:24,677 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:36:24] "[35m[1mGET /admin_view HTTP/1.1[0m" 500 -
+2025-01-29 11:36:24,765 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:36:24] "GET /admin_view?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-01-29 11:36:24,776 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:36:24] "GET /admin_view?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-01-29 11:36:24,868 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:36:24] "GET /admin_view?__debugger__=yes&cmd=resource&f=console.png&s=yQHgVv5gWUrGIRWvuJPU HTTP/1.1" 200 -
+2025-01-29 11:36:24,885 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:36:24] "[36mGET /admin_view?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-01-29 11:43:28,940 - INFO - _internal.py - 97 -  * Detected change in 'c:\\xampp\\htdocs\\Projek-RPL\\koneksi.py', reloading
+2025-01-29 11:43:28,998 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 11:43:29,491 - WARNING - _internal.py - 97 -  * Debugger is active!
+2025-01-29 11:43:29,493 - INFO - _internal.py - 97 -  * Debugger PIN: 952-147-792
+2025-01-29 11:45:26,463 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:26] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 11:45:26,665 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:26] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 11:45:26,671 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:26] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 11:45:26,673 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:26] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 11:45:26,715 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:26] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 11:45:44,155 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:44] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-29 11:45:44,172 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:44] "GET / HTTP/1.1" 200 -
+2025-01-29 11:45:44,187 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:44] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 11:45:44,187 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:44] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 11:45:44,187 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:44] "[36mGET /static/style/home.css HTTP/1.1[0m" 304 -
+2025-01-29 11:45:44,194 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 11:45:44] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:07:49,861 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:07:49] "GET /login HTTP/1.1" 200 -
+2025-01-29 12:07:49,905 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:07:49] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:07:49,912 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:07:49] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:07:49,918 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:07:49] "[36mGET /static/style/login.css HTTP/1.1[0m" 304 -
+2025-01-29 12:07:49,928 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:07:49] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:08:12,760 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:12] "GET /login HTTP/1.1" 200 -
+2025-01-29 12:08:12,814 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:12] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:08:12,824 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:12] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:08:12,830 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:12] "[36mGET /static/style/login.css HTTP/1.1[0m" 304 -
+2025-01-29 12:08:18,854 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:18] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-29 12:08:18,861 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:18] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-29 12:08:18,889 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:18] "GET /user_view HTTP/1.1" 200 -
+2025-01-29 12:08:18,912 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:18] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:08:18,914 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:18] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:08:18,919 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:18] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 12:08:18,925 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:18] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:08:41,848 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:41] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-29 12:08:41,858 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:41] "GET / HTTP/1.1" 200 -
+2025-01-29 12:08:41,871 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:41] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:08:41,873 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:41] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:08:41,874 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:41] "[36mGET /static/style/home.css HTTP/1.1[0m" 304 -
+2025-01-29 12:08:41,880 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:41] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:08:43,593 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:43] "GET /login HTTP/1.1" 200 -
+2025-01-29 12:08:43,637 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:43] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:08:43,653 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:43] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:08:43,655 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:43] "[36mGET /static/style/login.css HTTP/1.1[0m" 304 -
+2025-01-29 12:08:48,791 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:48] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-29 12:08:48,800 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:48] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-29 12:08:48,813 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:48] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 12:08:48,833 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:48] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:08:48,833 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:48] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:08:48,833 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:48] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 12:08:48,841 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:08:48] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:09:08,988 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:09:08] "GET /admin_dashbord HTTP/1.1" 200 -
+2025-01-29 12:09:09,029 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:09:09] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:09:09,037 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:09:09] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:09:09,040 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:09:09] "[36mGET /static/style/admin-view.css HTTP/1.1[0m" 304 -
+2025-01-29 12:09:09,053 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:09:09] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:13:07,826 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:07] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-29 12:13:07,855 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:07] "GET / HTTP/1.1" 200 -
+2025-01-29 12:13:07,901 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:07] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:13:07,910 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:07] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:13:07,919 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:07] "[36mGET /static/style/home.css HTTP/1.1[0m" 304 -
+2025-01-29 12:13:07,928 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:07] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:13:09,371 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:09] "GET /login HTTP/1.1" 200 -
+2025-01-29 12:13:09,421 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:09] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:13:09,435 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:09] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:13:09,438 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:09] "[36mGET /static/style/login.css HTTP/1.1[0m" 304 -
+2025-01-29 12:13:09,449 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:13:09] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:14:43,433 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:14:43] "GET /regis_user HTTP/1.1" 200 -
+2025-01-29 12:14:43,474 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:14:43] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:14:43,481 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:14:43] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:14:43,518 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:14:43] "GET /static/style/regis-user.css HTTP/1.1" 200 -
+2025-01-29 12:14:43,545 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:14:43] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:15:15,846 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:15] "GET /login HTTP/1.1" 200 -
+2025-01-29 12:15:15,887 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:15] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:15:15,901 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:15] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:15:15,915 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:15] "[36mGET /static/style/login.css HTTP/1.1[0m" 304 -
+2025-01-29 12:15:17,524 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:17] "GET /regis_user HTTP/1.1" 200 -
+2025-01-29 12:15:17,581 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:17] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:15:17,587 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:17] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:15:17,592 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:17] "[36mGET /static/style/regis-user.css HTTP/1.1[0m" 304 -
+2025-01-29 12:15:17,600 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:17] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:15:42,506 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:42] "GET /regis_admin HTTP/1.1" 200 -
+2025-01-29 12:15:42,517 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:42] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:15:42,519 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:42] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:15:42,527 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:42] "GET /static/style/regis-admin.css HTTP/1.1" 200 -
+2025-01-29 12:15:42,533 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:15:42] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:18:48,977 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:18:48] "POST /regis_admin HTTP/1.1" 200 -
+2025-01-29 12:18:49,022 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:18:49] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:18:49,024 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:18:49] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:18:49,029 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:18:49] "[36mGET /static/style/regis-admin.css HTTP/1.1[0m" 304 -
+2025-01-29 12:18:49,036 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:18:49] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:19:22,208 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:19:22] "POST /regis_admin HTTP/1.1" 200 -
+2025-01-29 12:19:22,226 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:19:22] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:19:22,231 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:19:22] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:19:22,235 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:19:22] "[36mGET /static/style/regis-admin.css HTTP/1.1[0m" 304 -
+2025-01-29 12:19:22,246 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:19:22] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:21:23,328 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:21:23] "GET /login HTTP/1.1" 200 -
+2025-01-29 12:21:23,374 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:21:23] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:21:23,386 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:21:23] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:21:23,396 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:21:23] "[36mGET /static/style/login.css HTTP/1.1[0m" 304 -
+2025-01-29 12:21:31,499 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:21:31] "POST /login HTTP/1.1" 200 -
+2025-01-29 12:21:31,511 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:21:31] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:21:31,515 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:21:31] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:21:31,516 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:21:31] "[36mGET /static/style/login.css HTTP/1.1[0m" 304 -
+2025-01-29 12:28:56,425 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:28:56] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-01-29 12:28:56,442 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:28:56] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-29 12:28:56,470 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:28:56] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 12:28:56,520 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:28:56] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:28:56,525 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:28:56] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:28:56,530 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:28:56] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 12:28:56,572 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:28:56] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:29:00,885 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:29:00] "GET /admin_dashbord HTTP/1.1" 200 -
+2025-01-29 12:29:00,943 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:29:00] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:29:00,959 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:29:00] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:29:00,968 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:29:00] "[36mGET /static/style/admin-view.css HTTP/1.1[0m" 304 -
+2025-01-29 12:29:01,036 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:29:01] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:30:49,564 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:30:49] "[35m[1mPOST /api/trains HTTP/1.1[0m" 500 -
+2025-01-29 12:32:49,931 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:32:49] "[35m[1mPOST /api/trains HTTP/1.1[0m" 201 -
+2025-01-29 12:33:20,426 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:33:20] "[35m[1mPOST /api/trains HTTP/1.1[0m" 201 -
+2025-01-29 12:35:38,521 - INFO - _internal.py - 97 -  * Detected change in 'c:\\xampp\\htdocs\\Projek-RPL\\koneksi.py', reloading
+2025-01-29 12:35:38,767 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 12:35:40,458 - WARNING - _internal.py - 97 -  * Debugger is active!
+2025-01-29 12:35:40,463 - INFO - _internal.py - 97 -  * Debugger PIN: 952-147-792
+2025-01-29 12:35:50,171 - INFO - _internal.py - 97 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-29 12:35:50,171 - INFO - _internal.py - 97 - [33mPress CTRL+C to quit[0m
+2025-01-29 12:35:50,177 - INFO - _internal.py - 97 -  * Restarting with stat
+2025-01-29 12:35:51,921 - WARNING - _internal.py - 97 -  * Debugger is active!
+2025-01-29 12:35:51,934 - INFO - _internal.py - 97 -  * Debugger PIN: 952-147-792
+2025-01-29 12:35:59,043 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:35:59] "[31m[1mPOST /api/trains HTTP/1.1[0m" 409 -
+2025-01-29 12:36:29,306 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:29] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-29 12:36:29,406 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:29] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 12:36:30,029 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:30] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:36:30,032 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:30] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:36:30,043 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:30] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 12:36:30,099 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:30] "[36mGET /static/images/background.png HTTP/1.1[0m" 304 -
+2025-01-29 12:36:44,640 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:44] "[32mPOST /delete_train/4 HTTP/1.1[0m" 302 -
+2025-01-29 12:36:44,684 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:44] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 12:36:44,733 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:44] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:36:44,741 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:44] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:36:44,749 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:44] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 12:36:49,461 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:49] "[32mPOST /delete_train/8 HTTP/1.1[0m" 302 -
+2025-01-29 12:36:49,502 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:49] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 12:36:49,553 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:49] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:36:49,560 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:49] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:36:49,567 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:36:49] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
+2025-01-29 12:37:24,286 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:37:24] "[32mPOST /delete_train/6 HTTP/1.1[0m" 302 -
+2025-01-29 12:37:24,325 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:37:24] "GET /admin_view HTTP/1.1" 200 -
+2025-01-29 12:37:24,371 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:37:24] "[36mGET /static/style/base.css HTTP/1.1[0m" 304 -
+2025-01-29 12:37:24,383 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:37:24] "[36mGET /static/images/logo.jpg HTTP/1.1[0m" 304 -
+2025-01-29 12:37:24,393 - INFO - _internal.py - 97 - 127.0.0.1 - - [29/Jan/2025 12:37:24] "[36mGET /static/style/user-view.css HTTP/1.1[0m" 304 -
